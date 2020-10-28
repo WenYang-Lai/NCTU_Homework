@@ -1,0 +1,8 @@
+#pragma symbol on
+int main(){
+  int a[3] = {1,2,3};
+int b[3]={1+1,2+2,3+3};
+int i=1,j=2,k=3;
+int c[3]={i,j,k};
+int d[3]={a[0],a[1],a[2]};
+}

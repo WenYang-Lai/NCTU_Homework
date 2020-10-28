@@ -1,0 +1,7 @@
+#pragma symbol on
+int main(){
+	int a,b,c=d;
+	int d=a;
+	int e=b;
+        return 0;
+}

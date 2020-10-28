@@ -1,0 +1,9 @@
+#pragma symbol on
+int a[4][4];
+int b[0][4];
+int c[4][0];
+int d[0];
+int e[1];
+int main(){
+return 1;
+}

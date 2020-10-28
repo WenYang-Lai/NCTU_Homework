@@ -1,0 +1,4 @@
+#pragma symbol on
+void f2(){
+	f1();
+}

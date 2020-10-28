@@ -1,0 +1,14 @@
+#pragma symbol on
+#pragma token off
+#pragma source off
+void main(){
+   a = 2;
+   const int a= 1;
+   a= 2;
+   int a;
+   int b;
+   b=a;
+}
+void f(){
+	main();
+}

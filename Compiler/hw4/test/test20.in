@@ -1,0 +1,48 @@
+#pragma symbol on
+int f(int a);
+int f(int b){return 1;}
+int f1(int a[1]);
+int f1(int a[2]){return 1;}
+int f1(int a[1]){return 1;}
+int f2(int a[1][1]);
+int f2(int a[1]){return 1;}
+bool f3();
+double f3(){
+    return true;
+    return 1;
+    return "1";
+}
+bool f3(){
+{return true;}
+}
+bool f3(){
+return true;
+}
+int f4(double b);
+int f4(int b){
+
+}
+const double a=4;
+const double b=4.0;
+const double c=4e4;
+const int aa=4;
+const int bb=4.0;
+const int cc=4e4;
+const float aaa=4;
+const float bbb=4.0;
+const float ccc=4e4;
+int f4(double b){
+        int a=true;
+       bool bb;
+       int c;
+          c=1+b;
+c=1+bb;
+	return 1;
+}
+int f4(double b){
+return 1;
+}
+int f4(double b){
+return 2;
+}
+

@@ -1,0 +1,116 @@
+	#ifndef __GPIO__INIT__
+	#define __GPIO__INIT__
+
+	#include "stm32l476xx.h"
+	#include "core_cm4.h"
+
+	void GPIO_init_LED()
+	{
+		RCC->AHB2ENR = RCC->AHB2ENR|0b111;
+		//Set PB3 as output mode
+		GPIOB->MODER=GPIOB->MODER&0xFFFFFF3F;
+		GPIOB->MODER=GPIOB->MODER| (0b01 << 6);
+		GPIOB->OSPEEDR = GPIOB->OSPEEDR | (0b10 << 6);
+		GPIOB->PUPDR = GPIOB->PUPDR | (0b01 << 6);
+		GPIOB->ODR=GPIOB->ODR&(~(1<<3));
+	}
+
+	void GPIO_init_keypad()
+	{
+		// SET keypad gpio OUTPUT //
+		RCC->AHB2ENR = RCC->AHB2ENR|0b110;
+		//Set PC0,1,2,3 as output mode
+		GPIOC->MODER=GPIOC->MODER&0xFFFFFF55;
+		GPIOC->OSPEEDR=GPIOC->OSPEEDR|0x0055;
+		GPIOC->PUPDR=GPIOC->PUPDR|0x55;
+		GPIOC->ODR=GPIOC->ODR|0b0;
+
+		// SET keypad gpio INPUT //
+		//Set PB5,6,7, 8 as INPUT mode
+		GPIOB->MODER=GPIOB->MODER&0xFFFC03FF;
+		//set PB5,6,7,8 is Pull-down input
+		GPIOB->PUPDR=GPIOB->PUPDR&0xFFFC03FF;
+		GPIOB->PUPDR=GPIOB->PUPDR|0x02A800;
+
+		GPIOB->OSPEEDR=GPIOB->OSPEEDR|0b01010101 << 10;
+	}
+
+	void GPIO_init_buzzer()
+	{
+
+	}
+
+	void GPIO_init_button()
+	{
+		RCC->AHB2ENR = RCC->AHB2ENR|0b100;
+		GPIOC->MODER = GPIOC->MODER & 0xF3FFFFFF;
+
+		GPIOC->PUPDR=GPIOC->PUPDR&0xF3FFFFFF;
+		GPIOC->PUPDR=GPIOC->PUPDR| (0x01 << 26);
+	}
+
+	void GPIO_init_LCD()
+	{
+		// RS: PC0, R/W: PC1, E: PC2
+		RCC->AHB2ENR = RCC->AHB2ENR|0b110;
+
+		GPIOC->MODER=GPIOC->MODER&0xFFFFFFC0;
+		GPIOC->MODER=GPIOC->MODER|0b010101;  //01
+		GPIOC->PUPDR=GPIOC->PUPDR&0xFFFFFFC0;
+		GPIOC->PUPDR=GPIOC->PUPDR|0b010101;  //01 pull up
+
+		GPIOC->OSPEEDR=GPIOC->OSPEEDR|0b010101;
+
+
+		//DB0~7 : PB0~7
+		GPIOB->MODER=GPIOB->MODER&0xFFFF0000;
+		GPIOB->MODER=GPIOB->MODER|0b0101010101010101;  //01
+		GPIOB->PUPDR=GPIOB->PUPDR&0xFFFF0000;
+		GPIOB->PUPDR=GPIOB->PUPDR|0b0101010101010101;  //01 pull up
+
+		GPIOB->OSPEEDR=GPIOB->OSPEEDR|0b0101010101010101;
+	}
+
+	void GPIO_init_DS18B20()
+	{
+		RCC->AHB2ENR = RCC->AHB2ENR|0b10;
+		//use PB8
+		GPIOB->PUPDR |= (0b01 << 16);
+		GPIOB->OSPEEDR |= (0b10) << 16;
+		//use PC3
+		//GPIOC->PUPDR |=  (0b01) << 6;
+		//GPIOC->OSPEEDR |= (0b10) << 6;
+	}
+
+	void GPIO_init_USART1()
+	{
+		//PA9, 10
+		RCC->AHB2ENR = RCC->AHB2ENR|0b1;
+
+		GPIOA->MODER &= 0xffC3ffff;
+		GPIOA->MODER |= (0b1010 << 18);
+
+		GPIOA->PUPDR &= 0xffC3ffff;
+
+		GPIOA->OSPEEDR &= 0xffC3ffff;
+		GPIOA->OSPEEDR |= (0b0101 << 18);
+
+		// USART
+		GPIOA->AFR[1] |= (0x77 << 4);
+	}
+
+	void GPIO_init_analog()
+	{
+		//PA1
+		RCC->AHB2ENR = RCC->AHB2ENR|0b1;
+
+		GPIOA->MODER |= (0b11 << 2 );
+
+		GPIOA->PUPDR &= 0xfffffff3;
+
+		GPIOA->OSPEEDR &= 0xfffffff3;
+		GPIOA->OSPEEDR |= (0b10) << 2;
+
+		GPIOA->ASCR |= (1<<1);
+	}
+	#endif

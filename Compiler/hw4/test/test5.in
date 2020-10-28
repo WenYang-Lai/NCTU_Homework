@@ -1,0 +1,7 @@
+#pragma symbol on
+int main(int a[4]){
+	return a[0];
+}
+int b(int a[5][4]){
+	return main(a[3]);
+}

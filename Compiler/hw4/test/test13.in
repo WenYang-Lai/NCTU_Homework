@@ -1,0 +1,22 @@
+#pragma symbol on
+int foo(int a[3][3], int b[5][3], int i){
+    a[0][0]=i;
+    i = a[1][1];
+    a[0][1] = b[1][2];
+    int k = a[3][i];
+    i = 3+a[0];
+    
+    a = b;
+    a[1] = b[2];
+    return a[0][0];
+}
+int f1(int a[5]);
+int f2(int a);
+int f3(float a[4]);
+void f4(int x,int z[5][5][5],int t[4]){
+   x=f1(z[0][1]);
+   x=f1(t);
+   x = f1(z[0][0][1]);
+   x =f2(z[0][0][1]);
+   x=f3(t);
+}

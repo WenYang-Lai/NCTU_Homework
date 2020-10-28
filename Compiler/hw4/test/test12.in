@@ -1,0 +1,9 @@
+#pragma symbol on
+void foo(){
+    int a[3]={1,2,3};
+    int b[4] ={1,2,3,4,5};
+    int c[2][3] = {1,2,3,4,5,6,7};
+    int d[5] = {1};
+    int e = "fuck";
+    int f[2][3]= {1,2,3,4,5,6};
+}

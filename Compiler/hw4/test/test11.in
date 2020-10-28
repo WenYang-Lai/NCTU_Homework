@@ -1,0 +1,31 @@
+#pragma symbol on
+int a = 1;
+int b = 0.1;
+int c = 1e-1;
+float aa = 1;
+float bb = 0.1;
+float cc = 1e-1;
+double aaa = 1;
+double bbb = 0.1;
+double ccc = 1e-1;
+int x[4] ={0,1,2,3};
+int y[4] ={0,1,2,3.4};
+int z[4] ={0,1,2,3e4};
+float xx[4] = {0,1,2,3};
+float yy[4] = {0,1,2,3.4};
+float zz[4]={0,1,2,3e4};
+double xxx[4]={0,1,2,3};
+double yyy[4]={0,1,2,3.4};
+double zzz[4]={0,1,2,3e4};
+const int d = 1;
+const int e = 0.1;
+const int f = 1e-1;
+const float dd = 1;
+const float ee  =0.1;
+const float ff = 1e-1;
+const double ddd = 1;
+const double eee = 0.1;
+const double fff = 1e-1;
+int main(){
+	return 1;
+}

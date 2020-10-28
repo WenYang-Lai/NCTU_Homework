@@ -1,0 +1,15 @@
+[monitor] getenv('MONITOR_OUTPUT') = 'monitor.out'
+[monitor] socket(2, 2050, 0) = 4
+[monitor] connect(4, '127.0.1.1', 16) = 0
+[monitor] close(-1) = -1
+[monitor] socket(2, 1, 0) = 4
+[monitor] setsockopt(4, 0, 1, 0x7ffead8fd90c, 4) = 0
+[monitor] connect(4, '128.199.171.21', 16) = 0
+[monitor] getenv('HOME') = '/home/nctuplus'
+[monitor] setsockopt(4, 1, 10, 0x7ffead8fd924, 4) = 0
+[monitor] read(0, 0x1e2bc30, 8191) = 15
+[monitor] read(0, 0x1e2bc3f, 8177) = 1
+[monitor] write(1, 0x1e27c20, 312) = 312
+[monitor] close(4) = 0
+[monitor] exit(1)
+[monitor] close(-1) = -1

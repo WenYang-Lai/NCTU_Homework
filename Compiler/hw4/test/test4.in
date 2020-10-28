@@ -1,0 +1,4 @@
+#pragma symbol on
+int foo(int a[4]){
+	return a[0][1];
+}

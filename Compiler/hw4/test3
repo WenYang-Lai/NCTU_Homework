@@ -1,0 +1,9 @@
+########## Error at Line#12: expression type error ##########
+=======================================================================================
+Name                             Kind       Level       Type               Attribute   
+---------------------------------------------------------------------------------------
+its                              variable   5(local)    bool               
+a                                variable   5(local)    bool               
+wonderful                        variable   5(local)    bool               
+life                             variable   5(local)    bool[88]           
+=======================================================================================

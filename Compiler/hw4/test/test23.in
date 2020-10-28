@@ -1,0 +1,29 @@
+#pragma symbol on
+const int x= 1;
+const int xx=1;
+void f(){
+const int x=1;
+int y= x;
+int z=xx;
+
+
+}
+int k(){
+return 1;
+}
+int kk(){
+	int x=k;
+}
+int kk(){
+	return 1;
+}
+int kkk(){
+	
+	x();
+	return 0;
+}
+int kkkk(){
+	int kkk;
+	kkk();
+	return 0;
+}

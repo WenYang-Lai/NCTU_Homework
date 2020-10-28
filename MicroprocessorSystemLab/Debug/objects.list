@@ -1,0 +1,6 @@
+"src/L10-1.o"
+"src/L10-2.o"
+"src/L10-3.o"
+"src/funcion.o"
+"startup/startup_stm32.o"
+"startup/sysmem.o"

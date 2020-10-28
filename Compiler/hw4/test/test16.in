@@ -1,0 +1,22 @@
+#pragma symbol on
+void f1(float a);
+void f2(double a[10]);
+int f3();
+double f4(int a, float b,double c,int d[10]){
+    b=a;
+    c =a;
+    c = b;
+    c= a+b;
+    f1(a);
+    c= f3();
+    f2(d);
+    a=c;
+    while(b==c){}
+    a = b+c;
+    c = b+c;
+    b = b+c;
+    b = a+b;
+    a = a+b;
+    f1(d[0]);
+    return a;
+}

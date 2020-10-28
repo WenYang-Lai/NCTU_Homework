@@ -1,0 +1,54 @@
+#pragma symbol on
+int main(){
+   int a;
+bool b;
+double c;
+float d;
+int e[5];
+string s;
+int f[5][5];
+if(a){}
+if(b){}
+if(c){}
+if(d){}
+if(e){}
+if(f){}
+if(s){}
+while(a){}
+while(b){}
+while(c){}
+while(d){}
+while(e){}
+while(f){}
+while(s){}
+do{}while(a);
+do{}while(b);
+do{}while(c);
+do{}while(d);
+do{}while(e);
+do{}while(f);
+do{}while(s);
+for(;;){}
+for(a=1;;){}
+//for(;b=1;){}
+for(;;c=1){}
+for(x=0;;x=2){}
+for(;a;){}
+for(;b;){}
+for(;c;){}
+for(;d;){}
+for(;e;){}
+for(;f;){}
+for(;s;){}
+break;
+continue;
+if(b){break;}
+if(b){continue;}
+while(b){break;}
+while(b){continue;}
+do{break;}while(b);
+do{continue;}while(b);
+for(;;){break;}
+for(;;){continue;}
+for(;true,false;){continue;}
+}
